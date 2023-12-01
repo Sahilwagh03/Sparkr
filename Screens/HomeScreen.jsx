@@ -6,6 +6,7 @@ import StorySection from '../Components/StorySection'
 import ToggleButton from '../Components/ToggleButton'
 import MakeFriend from './MakeFriend'
 import SearchPartners from './SearchPartners'
+import { StatusBar } from 'expo-status-bar'
 
 const HomeScreen = () => {
     const [activeButton, setActiveButton] = useState('Make Friends');
@@ -15,6 +16,7 @@ const HomeScreen = () => {
     };
     return (
         <SafeAreaView style={{backgroundColor:'#fdf7fd',flex:1}}>
+            <StatusBar backgroundColor='#fdf7fd'/>
             <ScrollView showsHorizontalScrollIndicator={false}>
                 <Header activeButton={activeButton}/>
                 {

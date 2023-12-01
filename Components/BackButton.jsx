@@ -2,7 +2,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-const BackButton = ({route}) => {
+const BackButton = ({route,color}) => {
 
     const navigation = useNavigation()
     const handleRoute=(route)=>{
@@ -11,7 +11,7 @@ const BackButton = ({route}) => {
     return (
         <>
             <TouchableOpacity style={BackButtonStyle.BackButtonIcon} onPress={()=> handleRoute(route)}>
-                <MaterialIcons name="keyboard-arrow-left" size={30} color="black" />
+                <MaterialIcons name="keyboard-arrow-left" size={30} color={color ? color : 'black'} />
             </TouchableOpacity>
         </>
     )

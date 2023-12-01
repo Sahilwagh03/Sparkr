@@ -4,27 +4,29 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import Profile1 from '../assets/Profile1.jpg'
 import Profile2 from '../assets/Profile2.jpg'
 import { useNavigation } from '@react-navigation/native'
+import { StatusBar } from 'expo-status-bar'
 
 const RegisterScreen = () => {
     const navigation = useNavigation();
     return (
-        <SafeAreaView style={{flex:1}}>
-            <View style={{flex:1}}>
-                <View style={{ flex:1.5, alignItems: 'center' ,backgroundColor:'white' }}>
-                <Text style={[RegisterStyle.categoryText, {top:'30%', left:'25%'}]}>Music</Text>
-                    <Text style={[RegisterStyle.categoryText, {bottom:'20%', right:'20%'}]}>Fashion</Text>
-                    <View style={[RegisterStyle.profileImageContainer, {top:'45%' , left:'15%'}]}>
+        <SafeAreaView style={{ flex: 1 }}>
+            <StatusBar backgroundColor='white' animated={true}/>
+            <View style={{ flex: 1 }}>
+                <View style={{ flex: 1.2, alignItems: 'center', backgroundColor: 'white' }}>
+                    <Text style={[RegisterStyle.categoryText, { top: '30%', left: '25%' }]}>Music</Text>
+                    <Text style={[RegisterStyle.categoryText, { bottom: '20%', right: '20%' }]}>Fashion</Text>
+                    <View style={[RegisterStyle.profileImageContainer, { top: '45%', left: '15%' }]}>
                         <Image source={Profile1} style={RegisterStyle.profileImage} />
                     </View>
-                    <View style={[RegisterStyle.profileImageContainer, {top:'20%' , right:'10%'}, RegisterStyle.shadowEffect]}>
+                    <View style={[RegisterStyle.profileImageContainer, { top: '20%', right: '10%' }, RegisterStyle.shadowEffect]}>
                         <Image source={Profile2} style={RegisterStyle.profileImage} />
                     </View>
                 </View>
                 <View style={RegisterStyle.contentContainer}>
                     <Text style={RegisterStyle.headerText}>Make friends with people like you</Text>
                     <Text style={RegisterStyle.paragraphText}>Interact with people who share the same interests as you</Text>
-                    <TouchableOpacity style={[RegisterStyle.button, { backgroundColor: '#4b164c' }]} onPress={()=> navigation.navigate('SignUp')}><Text style={RegisterStyle.buttonText}>Continue</Text></TouchableOpacity>
-                    <TouchableOpacity style={[RegisterStyle.button, { backgroundColor: '#fcf3fa' }]} onPress={()=> navigation.navigate('Tabs')}><Text style={[RegisterStyle.buttonText, { color: '#4b164c' }]}>Sign in</Text></TouchableOpacity>
+                    <TouchableOpacity style={[RegisterStyle.button, { backgroundColor: '#4b164c' }]} onPress={() => navigation.navigate('SignUp')}><Text style={RegisterStyle.buttonText}>Continue</Text></TouchableOpacity>
+                    <TouchableOpacity style={[RegisterStyle.button, { backgroundColor: '#fcf3fa' }]} onPress={() => navigation.navigate('Tabs')}><Text style={[RegisterStyle.buttonText, { color: '#4b164c' }]}>Sign in</Text></TouchableOpacity>
                 </View>
             </View>
         </SafeAreaView>
@@ -37,7 +39,7 @@ const RegisterStyle = StyleSheet.create({
     contentContainer: {
         padding: 20,
         backgroundColor: 'white',
-        flex:1
+        flex: 1
     },
     headerText: {
         fontSize: 24,
@@ -69,7 +71,7 @@ const RegisterStyle = StyleSheet.create({
         shadowColor: '#dd88cf',
         shadowOffset: {
             width: 5,
-            height:5,
+            height: 5,
         },
         shadowOpacity: 1,
         shadowRadius: 4,
@@ -91,12 +93,12 @@ const RegisterStyle = StyleSheet.create({
         elevation: 5,
     },
     profileImage: {
-        width: 120, 
+        width: 120,
         height: 120,
         borderRadius: 100,
     },
     categoryText: {
-        position:'absolute',
+        position: 'absolute',
         fontSize: 14,
         fontWeight: '400',
         marginBottom: 10,
@@ -104,7 +106,7 @@ const RegisterStyle = StyleSheet.create({
         padding: 10, // Add padding
         borderWidth: 2, // Add border
         borderRadius: 40, // Add border radius
-        borderColor:'#e5a6db',
+        borderColor: '#e5a6db',
         color: '#4b164c', // Border color
     },
 });

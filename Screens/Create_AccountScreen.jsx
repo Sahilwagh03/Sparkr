@@ -13,10 +13,10 @@ const Create_AccountScreen = () => {
       navigation.navigate(route)
   }
   return (
-    <SafeAreaView>
-      <View style={{backgroundColor:'rgba(250, 237, 248,0.8)', height:'100%',}}>
+    <SafeAreaView style={{flex:1}}>
+      <View style={{backgroundColor:'rgba(250, 237, 248,0.8)', flex:1}}>
         <BackButton route='SignUp'/>
-        <View style={{ marginHorizontal: 30 }}>
+        <View style={{ marginHorizontal: 30 ,flex:1}}>
           <Text style={styles.title}>Enter your number</Text>
           <View style={styles.inputContainer}>
             <CountryCodePicker

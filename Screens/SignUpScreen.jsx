@@ -5,15 +5,17 @@ import OnBoarding3 from '../assets/Onboarding_3.png'
 import { Feather } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
 const SignUpScreen = () => {
     const navigation = useNavigation()
     const handleButton= (route)=>{
         navigation.navigate(route)
     }
     return (
-        <SafeAreaView>
-            <View>
-                <View style={{ height: '55%', alignItems: 'center', backgroundColor: 'white' }}>
+        <SafeAreaView style={{flex:1}}>
+            <StatusBar backgroundColor='white' animated={true}/>
+            <View style={{flex:1}}>
+                <View style={{ flex:1.4, alignItems: 'center', backgroundColor: 'white' }}>
                     <Image source={OnBoarding3} style={[styles.OnBoarding3Image]} />
                 </View>
                 <View style={styles.contentContainer}>
@@ -45,7 +47,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         height: '45%',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        flex:1
     },
     headerText: {
         fontSize: 24,

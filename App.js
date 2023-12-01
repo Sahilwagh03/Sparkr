@@ -19,6 +19,9 @@ import OtpScreen from './Screens/OtpScreen';
 import AddPostScreen from './Screens/AddPostScreen';
 import { Entypo } from '@expo/vector-icons';
 import UserInfoScreen from './Screens/UserInfoScreen';
+import UserProfileScreen from './Screens/UserProfileScreen';
+import InterestsScreen from './Screens/InterestsScreen';
+import ChatDetail from './Components/ChatDetail';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -52,6 +55,18 @@ export default function App() {
           component={UserInfoScreen}
         />
         <Stack.Screen
+          name='UserProfile'
+          component={UserProfileScreen}
+        />
+        <Stack.Screen
+          name='Interests'
+          component={InterestsScreen}
+        />
+        <Stack.Screen
+          name='ChatDetail'
+          component={ChatDetail}
+        />
+        <Stack.Screen
           name="Tabs"
           component={TabNavigator}
         />
@@ -71,7 +86,7 @@ function TabNavigator() {
           bottom: 20,
           left: 20,
           right: 20,
-          elevation: 0,
+          elevation: 5,
           borderRadius: 50,
           height: 74,
         },
@@ -89,7 +104,7 @@ function TabNavigator() {
         options={{
           tabBarIcon: ({focused}) => {
             return (
-              <View style={focused ? {backgroundColor:'#DD88CF', padding:10 , paddingHorizontal:12, borderRadius:100}:{backgroundColor:'transparent'}}><Feather name="compass" size={28} color={focused ? 'white':"#4b164c"} /></View>
+              <View style={focused ? {backgroundColor:'#DD88CF', padding:12 , paddingHorizontal:12, borderRadius:100}:{backgroundColor:'transparent'}}><Feather name="compass" size={28} color={focused ? 'white':"#4b164c"} /></View>
             )
           }
         }} />
@@ -98,7 +113,7 @@ function TabNavigator() {
         options={{
           tabBarIcon: ({focused}) => {
             return (
-              <View style={focused ? {backgroundColor:'#DD88CF', padding:10 , paddingHorizontal:12, borderRadius:100}:{backgroundColor:'transparent'}}><Entypo name="plus" size={28} color={focused ? 'white':"#4b164c"} /></View>
+              <View style={focused ? {backgroundColor:'#DD88CF', padding:12 , paddingHorizontal:12, borderRadius:100}:{backgroundColor:'transparent'}}><Entypo name="plus" size={28} color={focused ? 'white':"#4b164c"} /></View>
             )
           }
         }} />
@@ -106,7 +121,7 @@ function TabNavigator() {
         options={{
           tabBarIcon: ({focused}) => {
             return (
-              <View style={focused ? {backgroundColor:'#DD88CF', padding:10 , paddingHorizontal:12, borderRadius:100}:{backgroundColor:'transparent'}}><MaterialIcons name="group" size={28} color={focused ? 'white':"#4b164c"} /></View>
+              <View style={focused ? {backgroundColor:'#DD88CF', padding:12 , paddingHorizontal:12, borderRadius:100}:{backgroundColor:'transparent'}}><MaterialIcons name="group" size={28} color={focused ? 'white':"#4b164c"} /></View>
             )
           }
         }} />
@@ -114,7 +129,7 @@ function TabNavigator() {
         options={{
           tabBarIcon: ({focused}) => {
             return (
-              <View style={focused ? {backgroundColor:'#DD88CF', padding:10 , paddingHorizontal:12, borderRadius:100}:{backgroundColor:'transparent'}}><Feather name="message-circle" size={28} color={focused ? 'white':"#4b164c"} /></View>
+              <View style={focused ? {backgroundColor:'#DD88CF', padding:12 , paddingHorizontal:12, borderRadius:100}:{backgroundColor:'transparent'}}><Feather name="message-circle" size={28} color={focused ? 'white':"#4b164c"} /></View>
             )
           }
         }} />

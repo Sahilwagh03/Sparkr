@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useNavigation } from '@react-navigation/native'
 import Logo from '../assets/Logo.png'
+import { StatusBar } from 'expo-status-bar'
 const WelcomeScreen = () => {
     const navigation = useNavigation();
 
@@ -14,6 +15,7 @@ const WelcomeScreen = () => {
 
     return (
         <SafeAreaView style={welcomeStyles.container}>
+            <StatusBar backgroundColor='#DD88cf'/>
             <View style={welcomeStyles.center}>
                 <Image source={Logo} />
                 <Text style={welcomeStyles.text}>Friendzy</Text>
